@@ -1,15 +1,26 @@
+"use client";
+import Lottie from "lottie-react";
+import Alert from '@/lib/Alert.json'
+import { ArrowRight } from "lucide-react";
 import React from "react";
 
-export default function GridBackgroundDemo() {
+export default function HoverBorderGradientDemo() {
   return (
-    <div className="h-[50rem] w-full bg-black   bg-grid-white/[0.2] relative flex items-center justify-center">
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+    <div className="m-40 flex justify-center text-center">
+   
+     <div className="h-36 w-36">
+     <Lottie animationData={Alert} />
+     </div>
+
 
       
-      <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
-        Backgrounds
-      </p>
+        <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+          Get APIs Access   <ArrowRight className="ml-3" size={20}/>
+        </button>
+  
+       
+      
     </div>
   );
 }
+
