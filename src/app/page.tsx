@@ -46,9 +46,10 @@ export default function DappGuardLanding() {
         toast.error('something is wrong!')
       }
       toast.success('fetching details')
-
+        
       const data = await response.json()
-      const dappResults = data.result?.result?.results || []
+ 
+      const dappResults = data.result?.results || []
 
       if (dappResults.length === 0) {
         setError('No results found.')
@@ -76,9 +77,9 @@ export default function DappGuardLanding() {
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
             <nav>
-              <ul className="flex space-x-6">
+              <ul className="flex space-x-6 px-3">
                 <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
-                <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li>
+                {/* <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li> */}
                 <li><a  className="hover:text-slate-400 transition-colors">FAQ</a></li>
               </ul>
             </nav>
@@ -102,18 +103,18 @@ export default function DappGuardLanding() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="max-w-2xl mx-auto"
             >
-              <div className="relative">
+              <div className=" md:relative ">
                 <Input
                   type="text"
                   placeholder="Enter Dapp name, contract address, or website URL"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  className="w-full p-6 pr-32 text-lg rounded-full border-2 border-[#09090b] bg-[#27272a] text-white placeholder-gray-400 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
+                  className="w-full p-6 md:pr-32 text-lg rounded-full border-2 border-[#09090b] bg-[#27272a] text-white placeholder-gray-400 focus:border-blue-400 focus:ring focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                 />
                 <Button
                   onClick={handleVerify}
                   disabled={loading}
-                  className="absolute right-2 top-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-full hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
+                  className="md:absolute mt-3 md:mt-0 right-2 top-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-blue-500 rounded-full hover:from-purple-600 hover:to-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 transition-all duration-300 ease-in-out"
                 >
                   {loading ? (
                     <motion.div
