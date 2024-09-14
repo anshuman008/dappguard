@@ -140,7 +140,7 @@ export default function DappGuardLanding() {
           </section>
 
 
-          <section id="features" className="mb-16 w-[90vw]">
+          <section id="features" className="mb-16 ">
 
             <h3 className="text-xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Why Choose DappGuard?</h3>
             <FeaturesSectionDemo />
@@ -181,14 +181,14 @@ export default function DappGuardLanding() {
         <AnimatePresence >
           {isModalOpen && (
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen} >
-              <DialogContent className="bg-gray-900 text-white border-2 border-slate-400 rounded-lg h-[90vh] overflow-y-scroll" style={{backgroundColor:dappData.length <= 0? '#D3D3D3':''}}>
+              <DialogContent className="bg-gray-900 text-white border-2 border-slate-400 rounded-lg h-[90vh] overflow-y-scroll no-scrollbar" style={{backgroundColor:dappData.length <= 0? '#D3D3D3':''}}>
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold text-blue-400">Dapp Verification Result</DialogTitle>
                   <DialogDescription className="text-gray-400">
                     {error ? error : "Here's what we found about the Dapp(s) you searched for:"}
                   </DialogDescription>
                 </DialogHeader>
-                <div className="mt-4 space-y-8">
+                <div className="mt-4 space-y-8">   
                   {dappData.length > 0 ? (
                     dappData.map((dapp, index) => (
                       <div key={index} className="space-y-4">
@@ -293,7 +293,7 @@ export default function DappGuardLanding() {
       </div>
 
       <Spotlight
-        className="-top-40 left-0 md:left-96 md:-top-36"
+        className="-top-96 left-16 md:left-96 md:-top-36"
         fill="white"
       />
       <AnimatedGridPattern
