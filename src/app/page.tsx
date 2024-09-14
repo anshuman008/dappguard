@@ -1,8 +1,9 @@
+
 'use client'
 import { cn } from "@/lib/utils";
 import { useState } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
-import { Search, Shield, CheckCircle, XCircle, AlertTriangle, ExternalLink, ArrowRight } from "lucide-react"
+import { Search, Shield, CheckCircle, XCircle, AlertTriangle, ArrowRight } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
@@ -13,6 +14,7 @@ import FeaturesSectionDemo from "@/components/Features";
 import { toast } from "sonner";
 import Lottie from "lottie-react";
 import Alert from '@/lib/Warning.json'
+import { useRouter } from "next/navigation";
 
 export default function DappGuardLanding() {
   const [inputValue, setInputValue] = useState('')
@@ -20,6 +22,7 @@ export default function DappGuardLanding() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [dappData, setDappData] = useState([])
   const [error, setError] = useState('')
+  const router = useRouter();
 
   const handleVerify = async () => {
     setLoading(true)
@@ -69,14 +72,14 @@ export default function DappGuardLanding() {
         <header className="container mx-auto py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Shield className="w-10 h-10 text-blue-400" />
+              <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')}/>
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
             <nav>
               <ul className="flex space-x-6">
-                <li><a href="#features" className="hover:text-blue-400 transition-colors">Features</a></li>
-                <li><a href="#how-it-works" className="hover:text-blue-400 transition-colors">How It Works</a></li>
-                <li><a href="#faq" className="hover:text-blue-400 transition-colors">FAQ</a></li>
+                <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
+                <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li>
+                <li><a  className="hover:text-slate-400 transition-colors">FAQ</a></li>
               </ul>
             </nav>
           </div>
@@ -129,7 +132,7 @@ export default function DappGuardLanding() {
               </div>
             </motion.div>
 
-            <button className="mt-6 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#27272a,45%,#ffffff8c,55%,#27272a)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <button onClick={()=> router.push('/early-access')} className="mt-6 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#27272a,45%,#ffffff8c,55%,#27272a)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               Get APIs Access   <ArrowRight className="ml-3" size={20} />
             </button>
 
@@ -192,7 +195,8 @@ export default function DappGuardLanding() {
                           <img
                             src={dapp.logo || '/default-logo.png'}
                             alt={`${dapp.name || 'Unknown'} logo`}
-                            className="w-16 h-16 rounded-full object-cover"
+
+                            className="h-16 w-16 rounded-full object-cover"
                           />
                           <div>
                             <h3 className="text-xl font-semibold">{dapp.name || 'Unknown Dapp'}</h3>
@@ -295,7 +299,7 @@ export default function DappGuardLanding() {
         numSquares={200}
         maxOpacity={0.1}
         duration={3}
-        repeatDelay={1}
+        // repeatDelay={1}
         className={cn(
           "[mask-image:radial-gradient(white,transparent)]",
           "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",

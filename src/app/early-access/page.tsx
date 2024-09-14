@@ -1,19 +1,20 @@
 'use client'
+/* eslint-disable */
+
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import ShinyButton from "@/components/magicui/shiny-button";
 import { useState } from 'react'
-import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-// import { Label } from "@/components/ui/label"
-import { CheckCircle, Ghost, Shield } from 'lucide-react'
+import { CheckCircle, Shield } from 'lucide-react'
 import { Spotlight } from '@/components/ui/Spotlight'
+import { useRouter } from "next/navigation";
 
 export default function EarlyAccessPage() {
     const [email, setEmail] = useState('')
     const [isSubmitted, setIsSubmitted] = useState(false)
-
+    const router = useRouter();
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         // Here you would typically send the email to your backend
@@ -28,7 +29,7 @@ export default function EarlyAccessPage() {
             <header className="container mx-auto py-8">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                        <Shield className="w-10 h-10 text-blue-400" />
+                        <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')}/>
                         <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
                     </div>
                 </div>
@@ -83,8 +84,7 @@ export default function EarlyAccessPage() {
                                         
                                        
 
-                                         {/* <Button type="submit" className="mt-3" variant={"outline"}>
-                                        </Button> */}
+                                      
 
                                          <ShinyButton text=" Get Early Access" className="border-2 border-white mt-3 text-white hover:bg-black hover:text-white" />
                                     </div>
@@ -113,7 +113,7 @@ export default function EarlyAccessPage() {
         numSquares={200}
         maxOpacity={0.1}
         duration={3}
-        repeatDelay={1}
+        // repeatDelay={1}
         className={cn(
           "[mask-image:radial-gradient(white,transparent)]",
           "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",

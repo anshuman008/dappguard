@@ -10,7 +10,7 @@ export async function POST(request:NextRequest) {
     const response = await fetch(process.env.REQUEST_URL as string, {
       method: 'POST',
       headers: {
-        'x-api-key': process.env.API_KEY,
+        'x-api-key': process.env.API_KEY as string,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ search }),
