@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import Lottie from "lottie-react";
 import Alert from '@/lib/Warning.json'
 import { useRouter } from "next/navigation";
+import { ModeToggle } from "@/components/ui/theme-button";
 
 export default function DappGuardLanding() {
   const [inputValue, setInputValue] = useState('')
@@ -65,7 +66,7 @@ export default function DappGuardLanding() {
     }
   }
   return (
-    <div className="relative flex  items-center justify-center overflow-hidden bg-background  md:shadow-xl">
+    <div className="relative flex items-center justify-center overflow-hidden bg-background  md:shadow-xl">
 
       {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
@@ -76,13 +77,11 @@ export default function DappGuardLanding() {
               <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')}/>
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
-            <nav>
-              <ul className="flex space-x-6 px-3">
-                <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
-                {/* <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li> */}
-                <li><a  className="hover:text-slate-400 transition-colors">FAQ</a></li>
-              </ul>
-            </nav>
+
+            <div className="bg-white p-3 rounded-md dark:bg-neutral-800">
+            <ModeToggle/>
+            </div>
+            
           </div>
         </header>
 
