@@ -49,9 +49,9 @@ export default function DappGuardLanding() {
         toast.error('something is wrong!')
       }
       toast.success('fetching details')
-        
+
       const data = await response.json()
- 
+
       const dappResults = data.result?.results || []
 
       if (dappResults.length === 0) {
@@ -73,17 +73,17 @@ export default function DappGuardLanding() {
       {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
       <div className="min-h-screen  text-white z-30">
-        <header className="container mx-auto py-8 md:px-10">
+        <header className="container mx-auto py-8 ">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')}/>
+              <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')} />
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
             <nav>
               <ul className="flex space-x-6 px-3">
                 <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
                 {/* <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li> */}
-                <li><a  className="hover:text-slate-400 transition-colors">FAQ</a></li>
+                <li><a className="hover:text-slate-400 transition-colors">FAQ</a></li>
               </ul>
             </nav>
           </div>
@@ -136,7 +136,7 @@ export default function DappGuardLanding() {
               </div>
             </motion.div>
 
-            <button onClick={()=> router.push('/early-access')} className="mt-6 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#27272a,45%,#ffffff8c,55%,#27272a)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <button onClick={() => router.push('/early-access')} className="mt-6 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#27272a,45%,#ffffff8c,55%,#27272a)] bg-[length:200%_100%] px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
               Get APIs Access   <ArrowRight className="ml-3" size={20} />
             </button>
 
@@ -157,12 +157,12 @@ export default function DappGuardLanding() {
               <li className="bg-neutral-900 p-3 rounded-md">Receive a comprehensive security report with risk assessment and detailed findings.</li>
               <li className="bg-neutral-900 p-3 rounded-md">Make informed decisions about using the dapp based on our verification results.</li>
             </ul>
-          </section> 
+          </section>
 
-           <section id="faq" className="md:px-28">
+          <section id="faq" className="md:px-28">
             <h3 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
-          <FAQ/>
-          </section> 
+            <FAQ />
+          </section>
         </main>
 
 
@@ -176,7 +176,7 @@ export default function DappGuardLanding() {
                     {error ? error : "Here's what we found about the Dapp(s) you searched for:"}
                   </DialogDescription>
                 </DialogHeader>
-                <div className="mt-4 space-y-8">   
+                <div className="mt-4 space-y-8">
                   {dappData.length > 0 ? (
                     dappData.map((dapp, index) => (
                       <div key={index} className="space-y-4">
@@ -272,7 +272,7 @@ export default function DappGuardLanding() {
           )}
         </AnimatePresence>
 
-          <DockDemo/>
+        <DockDemo />
         <footer className=" py-8 ">
           <div className="container mx-auto px-4 text-center">
             <p>&copy; 2023 DappGuard. All rights reserved.</p>
