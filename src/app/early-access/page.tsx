@@ -60,12 +60,11 @@ export default function EarlyAccessPage() {
                                     <ul className="list-disc list-inside space-y-1 text-gray-300 text-sm md:text-lg">
                                         <li>Verify if a Solana dApp is authentic</li>
                                         <li>Get detailed information about dApps</li>
-                                        <li>Check dApp security status</li>
-                                        <li>Monitor dApp activity and usage</li>
-                                    </ul>
+                                        <li>Check dApp security status</li>  
+                                      </ul>
                                 </div>
                                 <div >
-                                    <p className="mt-4  inline-flex  h-10 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#09090b,45%,#ffffff8c,55%,#09090b)] bg-[length:200%_100%] px-2 md:px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                                    <p className="mt-4 w-full  inline-flex  h-10 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#09090b,45%,#ffffff8c,55%,#09090b)] bg-[length:200%_100%] px-2 py-10 md:py-3 text-center md:px-6 font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                                         🚀 First 1000 users get free API access!
                                     </p>
                                 </div>

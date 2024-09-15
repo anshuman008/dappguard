@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 
 'use client'
 import { cn } from "@/lib/utils";
@@ -15,10 +16,11 @@ import { toast } from "sonner";
 import Lottie from "lottie-react";
 import Alert from '@/lib/Warning.json'
 import { useRouter } from "next/navigation";
-import { ModeToggle } from "@/components/ui/theme-button";
+import { DockDemo } from "@/components/SocialLinks";
+import FAQ from "@/components/Accordian";
 
 export default function DappGuardLanding() {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('jupiter')
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [dappData, setDappData] = useState([])
@@ -66,22 +68,24 @@ export default function DappGuardLanding() {
     }
   }
   return (
-    <div className="relative flex items-center justify-center overflow-hidden bg-background  md:shadow-xl">
+    <div className="relative flex  items-center justify-center overflow-hidden bg-background  md:shadow-xl">
 
       {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
       <div className="min-h-screen  text-white z-30">
-        <header className="container mx-auto py-8">
+        <header className="container mx-auto py-8 md:px-10">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')}/>
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
-
-            <div className="bg-white p-3 rounded-md dark:bg-neutral-800">
-            <ModeToggle/>
-            </div>
-            
+            <nav>
+              <ul className="flex space-x-6 px-3">
+                <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
+                {/* <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li> */}
+                <li><a  className="hover:text-slate-400 transition-colors">FAQ</a></li>
+              </ul>
+            </nav>
           </div>
         </header>
 
@@ -145,42 +149,27 @@ export default function DappGuardLanding() {
             <FeaturesSectionDemo />
           </section>
 
-          {/* <section id="how-it-works" className="mb-16">
+          <section id="how-it-works" className="mb-16  md:px-28 rounded-lg">
             <h3 className="text-3xl font-bold mb-8 text-center">How DappGuard Works</h3>
-            <ol className="list-decimal list-inside space-y-4">
-              <li>Enter a Solana dapp name, contract address, or website URL in the search bar.</li>
-              <li>Our advanced algorithms analyze the dapp's smart contracts, website, and on-chain activity.</li>
-              <li>Receive a comprehensive security report with risk assessment and detailed findings.</li>
-              <li>Make informed decisions about using the dapp based on our verification results.</li>
-            </ol>
-          </section> */}
+            <ul className="list-decimal list-inside space-y-4 ">
+              <li className="bg-neutral-900 p-3 rounded-md">Enter a Solana dapp name, contract address, or website URL in the search bar.</li>
+              <li className="bg-neutral-900 p-3 rounded-md">Our advanced algorithms analyze the dapp&apos;s smart contracts, website, and on-chain activity.</li>
+              <li className="bg-neutral-900 p-3 rounded-md">Receive a comprehensive security report with risk assessment and detailed findings.</li>
+              <li className="bg-neutral-900 p-3 rounded-md">Make informed decisions about using the dapp based on our verification results.</li>
+            </ul>
+          </section> 
 
-          {/* <section id="faq" className="mb-16">
+           <section id="faq" className="md:px-28">
             <h3 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
-            <div className="space-y-4">
-              {[
-                { question: "Is DappGuard free to use?", answer: "Yes, DappGuard is completely free for all users." },
-                { question: "How often is the dapp information updated?", answer: "We update our database daily to ensure the most current information." },
-                { question: "Can I suggest a dapp for verification?", answer: "Contact us to suggest a dapp for our verification process." },
-              ].map((item, index) => (
-                <Card key={index} className="bg-gray-800 border-purple-500 text-white">
-                  <CardHeader>
-                    <CardTitle>{item.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription>{item.answer}</CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section> */}
+          <FAQ/>
+          </section> 
         </main>
 
 
         <AnimatePresence >
           {isModalOpen && (
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen} >
-              <DialogContent className="bg-gray-900 text-white border-2 border-slate-400 rounded-lg h-[90vh] overflow-y-scroll no-scrollbar" style={{backgroundColor:dappData.length <= 0? '#D3D3D3':''}}>
+              <DialogContent className="bg-gray-900 text-white border-2 border-slate-400 rounded-lg h-[90vh] overflow-y-scroll no-scrollbar" >
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-bold text-blue-400">Dapp Verification Result</DialogTitle>
                   <DialogDescription className="text-gray-400">
@@ -275,7 +264,7 @@ export default function DappGuardLanding() {
                     </div>
                   )}
                 </div>
-                <Button onClick={() => setIsModalOpen(false)} className="mt-6 w-full bg-purple-500 hover:bg-purple-600">
+                <Button onClick={() => setIsModalOpen(false)} className="mt-6 w-full ">
                   Close
                 </Button>
               </DialogContent>
@@ -283,6 +272,7 @@ export default function DappGuardLanding() {
           )}
         </AnimatePresence>
 
+          <DockDemo/>
         <footer className=" py-8 ">
           <div className="container mx-auto px-4 text-center">
             <p>&copy; 2023 DappGuard. All rights reserved.</p>
