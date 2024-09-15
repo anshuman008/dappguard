@@ -2,7 +2,6 @@
 import React from "react";
 
 import { Dock, DockIcon } from "@/components/magicui/dock";
-import twiiter from "@/lib/twitter.svg"
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 export function DockDemo() {
