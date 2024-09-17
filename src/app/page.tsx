@@ -17,7 +17,8 @@ import Lottie from "lottie-react";
 import Alert from '@/lib/Warning.json'
 import { useRouter } from "next/navigation";
 import { DockDemo } from "@/components/SocialLinks";
-import FAQ from "@/components/Accordian";
+import HowItWorks from "@/components/HowitWorks";
+import AnimatedListDemo from "@/components/Faqs"
 
 export default function DappGuardLanding() {
   const [inputValue, setInputValue] = useState('jupiter')
@@ -30,18 +31,22 @@ export default function DappGuardLanding() {
   const handleVerify = async () => {
     setLoading(true)
     setError('')
-    const val = inputValue.trim();
+
+    let val = inputValue.trim();
 
     if (!val) {
       toast.warning('please enter something')
       setLoading(false);
       return;
     }
+
+    val = val.endsWith('/') ? val.slice(0, -1) : val
+
     try {
       const response = await fetch('/api/detect', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ search: inputValue.trim() }),
+        body: JSON.stringify({ search: val }),
       })
 
       if (!response.ok) {
@@ -73,24 +78,19 @@ export default function DappGuardLanding() {
       {/* <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div> */}
 
       <div className="min-h-screen  text-white z-30">
-        <header className="container mx-auto py-8 ">
+
+        <header className="container mx-auto py-8 pl-5 md:!pl-0">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')} />
               <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
             </div>
-            <nav>
-              <ul className="flex space-x-6 px-3">
-                <li><a className="hover:text-slate-400 transition-colors">Features</a></li>
-                {/* <li><a  className="hover:text-slate-400 transition-colors">How It Works</a></li> */}
-                <li><a className="hover:text-slate-400 transition-colors">FAQ</a></li>
-              </ul>
-            </nav>
+   
           </div>
         </header>
 
         <main className="container mx-auto px-4 py-16 mt-7">
-          <section className="text-center mb-16">
+          <section className="text-center mb-16 md:mb-32 ">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -143,25 +143,18 @@ export default function DappGuardLanding() {
           </section>
 
 
-          <section id="features" className="mb-16 ">
-
-            <h3 className="text-xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Why Choose DappGuard?</h3>
+          <section id="features" className=" ">
+            <h3 className="text-2xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-7">Why Choose DappGuard?</h3>
             <FeaturesSectionDemo />
           </section>
 
-          <section id="how-it-works" className="mb-16  md:px-28 rounded-lg">
-            <h3 className="text-3xl font-bold mb-8 text-center">How DappGuard Works</h3>
-            <ul className="list-decimal list-inside space-y-4 ">
-              <li className="bg-neutral-900 p-3 rounded-md">Enter a Solana dapp name, contract address, or website URL in the search bar.</li>
-              <li className="bg-neutral-900 p-3 rounded-md">Our advanced algorithms analyze the dapp&apos;s smart contracts, website, and on-chain activity.</li>
-              <li className="bg-neutral-900 p-3 rounded-md">Receive a comprehensive security report with risk assessment and detailed findings.</li>
-              <li className="bg-neutral-900 p-3 rounded-md">Make informed decisions about using the dapp based on our verification results.</li>
-            </ul>
+          <section id="how-it-works" className="w-[100vw] md:w-full">
+            <HowItWorks />
           </section>
 
-          <section id="faq" className="md:px-28">
-            <h3 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h3>
-            <FAQ />
+          <section id="faq" className="w-[100vw] md:w-full">
+            <h3 className="text-2xl font-bold  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-8 text-center">Frequently Asked Questions</h3>
+            <AnimatedListDemo />
           </section>
         </main>
 
@@ -282,7 +275,7 @@ export default function DappGuardLanding() {
       </div>
 
       <Spotlight
-        className="-top-96 left-16 md:left-96 md:-top-36"
+        className="-top-[40rem] left-16 md:left-96 md:-top-72 lg:!left-96 lg:!-top-56"
         fill="white"
       />
       <AnimatedGridPattern

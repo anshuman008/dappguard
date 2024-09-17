@@ -48,14 +48,14 @@ export async function POST(request: NextRequest) {
     });
 
     const data = await response.json();
-    console.log(data.result.result.results, 'this is the data');
+    // console.log(data.result.result.results, 'this is the data');
 
     // Filter the dApps that are on Solana chain
     const solanaDapps = data.result.result.results.filter((dapp: Dapp) =>
       dapp.chains.includes('solana')
     );
 
-    console.log(solanaDapps, 'this is the data');
+    // console.log(solanaDapps, 'this is the data');
 
     return NextResponse.json({
       success: true,
