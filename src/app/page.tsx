@@ -20,7 +20,7 @@ import { DockDemo } from "@/components/SocialLinks";
 import HowItWorks from "@/components/HowitWorks";
 import AnimatedListDemo from "@/components/Faqs"
 
-export default function DappGuardLanding() {
+export default function SafeDappLanding() {
   const [inputValue, setInputValue] = useState('jupiter')
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -83,7 +83,7 @@ export default function DappGuardLanding() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')} />
-              <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
+              <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">SafeDapp</h1>
             </div>
    
           </div>
@@ -97,7 +97,7 @@ export default function DappGuardLanding() {
               transition={{ duration: 0.5 }}
             >
               <h2 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">Verify Solana <Cover>Dapps</Cover></h2>
-              <p className="mt-4 font-normal text-xl text-neutral-300 max-w-lg text-center mx-auto mb-4">DappGuard: Your trusted companion for safe decentralized experiences</p>
+              <p className="mt-4 font-normal text-xl text-neutral-300 max-w-lg text-center mx-auto mb-4">SafeDapp: Your trusted companion for safe decentralized experiences</p>
             </motion.div>
 
             <motion.div
@@ -144,7 +144,7 @@ export default function DappGuardLanding() {
 
 
           <section id="features" className=" ">
-            <h3 className="text-2xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-7">Why Choose DappGuard?</h3>
+            <h3 className="text-2xl md:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 mb-7">Why Choose SafeDapp?</h3>
             <FeaturesSectionDemo />
           </section>
 
@@ -268,7 +268,7 @@ export default function DappGuardLanding() {
         <DockDemo />
         <footer className=" py-8 ">
           <div className="container mx-auto px-4 text-center">
-            <p>&copy; 2023 DappGuard. All rights reserved.</p>
+            <p>&copy; 2023 SafeDapp. All rights reserved.</p>
             <p className="mt-2">Securing the Solana ecosystem, one dapp at a time.</p>
           </div>
         </footer>

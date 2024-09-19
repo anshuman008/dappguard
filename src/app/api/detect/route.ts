@@ -34,6 +34,7 @@ type Dapp = {
 };
 
 export async function POST(request: NextRequest) {
+  
   const { search } = await request.json();
 
   console.log(process.env.API_KEY);

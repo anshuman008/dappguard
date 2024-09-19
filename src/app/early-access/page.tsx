@@ -30,7 +30,7 @@ export default function EarlyAccessPage() {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2">
                             <Shield className="w-10 h-10 text-blue-400 cursor-pointer" onClick={() => router.push('/')} />
-                            <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">DappGuard</h1>
+                            <h1 className="text-xl md:text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">SafeDapp</h1>
                         </div>
                         <nav>
                             <ul className="flex space-x-6 px-3">
@@ -47,7 +47,7 @@ export default function EarlyAccessPage() {
                         <CardHeader>
                             <CardTitle className="text-2xl font-bold flex items-center gap-2">
                                 {/* <Shield className="w-10 h-10 md:w-20 md:h-20 text-blue-400 " /> */}
-                                <span className='text-xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 '>DappGuard Early Access</span>
+                                <span className='text-xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 '>SafeDapp Early Access</span>
                             </CardTitle>
                             <CardDescription className="text-lg md:text-2xl font-bold text-left  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
                                 Get free API access to verify Solana dApps

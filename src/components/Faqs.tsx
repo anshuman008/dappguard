@@ -15,28 +15,28 @@ interface Item {
 
 let faqs: Item[] =  [
     {
-      question: "What is DappGuard?",
-      answer: "DappGuard verifies Solana dApps, helping users avoid scams by providing trusted information and links.",
+      question: "What is SafeDapp?",
+      answer: "SafeDapp verifies Solana dApps, helping users avoid scams by providing trusted information and links.",
       time: "10m ago",
       icon: "🔍",
       color: "#00C9A7"
     },
     {
-      question: "What are the benefits of using DappGuard?",
+      question: "What are the benefits of using SafeDapp?",
       answer: "It enhances security by identifying unverified or scam dApps and providing official social links.",
       time: "20m ago",
       icon: "🔒",
       color: "#FFB800"
     },
     {
-      question: "How does DappGuard help with rug pulls and scams?",
+      question: "How does SafeDapp help with rug pulls and scams?",
       answer: "It flags high-risk dApps and detects suspicious activities to protect users from scams.",
       time: "5m ago",
       icon: "⚠️",
       color: "#FF3D71"
     },
     {
-      question: "Can I get verified links through DappGuard?",
+      question: "Can I get verified links through SafeDapp?",
       answer: "Yes, it provides official links, reducing the risk of fake sites.",
       time: "25m ago",
       icon: "🔗",
@@ -50,7 +50,7 @@ let faqs: Item[] =  [
       color: "#7C4DFF"
     },
     {
-      question: "Is DappGuard free?",
+      question: "Is SafeDapp free?",
       answer: "Yes, it's completely free for all users.",
       time: "45m ago",
       icon: "💸",

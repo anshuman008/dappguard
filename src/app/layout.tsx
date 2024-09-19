@@ -16,8 +16,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   icons:"/shield.png",
-  title: "Dappguard",
-  description: "Verify Solana DApps and ensure secure interactions with DappGuard.",
+  title: "SafeDapp",
+  description: "Verify Solana DApps and ensure secure interactions with SafeDapp.",
 };
 
 export default function RootLayout({
