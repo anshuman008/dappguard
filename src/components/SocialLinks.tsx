@@ -10,13 +10,13 @@ export function DockDemo() {
     <div className="relative">
       <Dock magnification={60} distance={100}>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.gitHub className="size-full" onClick={() => {window.open('https://github.com/anshuman008')}} />
+          <Icons.gitHub className="size-full" onClick={() => {window.open('https://github.com/prince981620')}} />
         </DockIcon>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.twitter className="size-full"  onClick={() => {window.open('https://x.com/anshu_code')}}/>
+          <Icons.twitter className="size-full"  onClick={() => {window.open('https://x.com/m_jinprince')}}/>
         </DockIcon>
         <DockIcon className="bg-black/10 dark:bg-white/10 p-3">
-          <Icons.linkedin className="size-full"  onClick={() => {window.open('https://github.com/anshuman008')}}/>
+          <Icons.linkedin className="size-full"  onClick={() => {window.open('https://www.linkedin.com/in/prince-yadav-a45b73240')}}/>
         </DockIcon>
       </Dock>
     </div>
